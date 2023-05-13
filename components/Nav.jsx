@@ -42,7 +42,7 @@ const Nav = () => {
               Create Post
             </Link>
 
-            <button type='button' onClick={signOut} className='outline_btn'>
+            <button type='button' onClick={() => signOut} className='outline_btn'>
               Sign Out
             </button>
             <Link href='/profile'>
@@ -110,7 +110,7 @@ const Nav = () => {
                   type='button'
                   onClick={() => {
                     setToggleDropdown(false);
-                    signOut({});
+                    signOut();
                   }}
                   className='mt-5 w-full black_btn'
                 >
