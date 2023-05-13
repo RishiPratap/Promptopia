@@ -13,6 +13,7 @@ const handler = NextAuth({
   ],
   callbacks: {
     async session({ session }) {
+      console.log("session", session);
       // store the user id from MongoDB to session
       const sessionUser = await User.findOne({ email: session.user.email });
       session.user.id = sessionUser._id.toString();
@@ -21,6 +22,7 @@ const handler = NextAuth({
     },
     async signIn({ account, profile, user, credentials }) {
       try {
+        console.log("signIn", account, profile, user, credentials);
         await connectToDatabase();
 
         // check if user already exists
