@@ -16,15 +16,18 @@ const handler = NextAuth({
       // store the user id from MongoDB to session
       const sessionUser = await User.findOne({ email: session.user.email });
       session.user.id = sessionUser._id.toString();
+      console.log("session", session);
 
       return session;
     },
     async signIn({ account, profile, user, credentials }) {
+        console.log("signIn", account, profile, user, credentials);
       try {
         await connectToDatabase();
 
         // check if user already exists
         const userExists = await User.findOne({ email: profile.email });
+        console.log("userExists", userExists);
 
         // if not, create a new document and save user in MongoDB
         if (!userExists) {
@@ -33,6 +36,7 @@ const handler = NextAuth({
             username: profile.name.replace(" ", "").toLowerCase(),
             image: profile.image,
           });
+          console.log("User created");
         }
 
         return true

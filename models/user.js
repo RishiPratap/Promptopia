@@ -14,6 +14,7 @@ const userSchema = new Schema({
 
     image: {
         type: String,
+        required: [true, "Image is required"],
     }
 });
 
