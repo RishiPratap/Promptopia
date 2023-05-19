@@ -1,5 +1,5 @@
 import '@styles/globals.css'
-import Feed from '@components/Feed'
+import Feed from '@components/feed'
 
 export default function Page() {
   return (
