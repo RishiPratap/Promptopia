@@ -13,6 +13,7 @@ const Rootlayout = ({children}) => {
             <head>
                 <meta charSet='utf-8'/>
                 <meta name='viewport' content='width=device-width, initial-scale=1'/>
+                <link rel='icon' href='https://cdn.iconscout.com/icon/premium/png-512-thumb/bot-2582685-2153330.png?f=avif&w=512'/>
                 <meta name='theme-color' content='#000000'/>
                 <meta name='description' content={metadata.description}/>
                 <meta property='og:title' content={metadata.title}/>
