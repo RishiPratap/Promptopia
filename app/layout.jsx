@@ -24,8 +24,8 @@ const Rootlayout = ({children}) => {
                 <meta name='twitter:description' content={metadata.description}/>
                 
                 </head>
-                <Provider>
             <body suppressHydrationWarning={true} >
+            <Provider>
             <div className='main'>
                 <div className='gradient'/>
             </div>
@@ -33,8 +33,8 @@ const Rootlayout = ({children}) => {
             <Nav/>
                 {children}
             </main>
-            </body>
             </Provider>
+            </body>
         </html>
     )
 }
